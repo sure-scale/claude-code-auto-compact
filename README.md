@@ -31,6 +31,13 @@ Not in tmux → no-ops silently. Safe to call unconditionally.
 ## Requirements
 
 - Claude Code, `tmux`, Python 3.8+ (for the sensor hook).
+- **macOS or Linux** — works natively.
+- **Windows** — via WSL2 only. Run Claude Code inside a WSL2 distro; native
+  Windows (PowerShell/cmd) has no tmux. Inside WSL everything is identical to
+  Linux.
+
+The scripts are plain bash + tmux + coreutils (`auto-compact.sh`) and pure
+Python (`context-sensor.py`) — no OS-specific dependencies.
 
 ## Install
 
@@ -49,7 +56,10 @@ ln -s "$(pwd)/bin/context-sensor.py"  ~/.claude/bin/context-sensor.py # sensor h
 ### 2. Run Claude Code inside tmux
 
 ```bash
-brew install tmux   # or your platform's package manager
+brew install tmux          # macOS
+sudo apt install tmux      # Debian / Ubuntu (incl. WSL2)
+sudo dnf install tmux      # Fedora / RHEL
+sudo pacman -S tmux        # Arch
 ```
 
 Make every Claude Code shell run in its own tmux session so `$TMUX_PANE` is set
@@ -78,7 +88,9 @@ is native tmux integration:
 | **Ghostty** | Standard | Use the generic snippet as-is. No native integration. |
 | **kitty** | Standard | Use the generic snippet. kitty's own `kitty @`/windows are *not* tmux and don't set `$TMUX`, so you still need real tmux for this tool. |
 | **WezTerm** | Standard | Use the generic snippet. WezTerm's built-in multiplexer is separate from tmux and won't set `$TMUX`; run real tmux inside it. |
-| **Alacritty / Terminal.app** | Standard | Use the generic snippet as-is. |
+| **Alacritty / Terminal.app** | Standard | Use the generic snippet as-is. (Terminal.app is macOS-only.) |
+| **Windows Terminal (WSL2)** | Standard | Run Claude Code inside your WSL2 distro; put the snippet in the distro's `~/.bashrc`/`~/.zshrc`. PowerShell/cmd have no tmux. |
+| **GNOME Terminal / Konsole / other Linux** | Standard | Use the generic snippet as-is. |
 
 In every case the requirement is the same: Claude Code must run inside a real
 tmux session so `$TMUX_PANE` is set. A terminal's own tabs/splits/multiplexer do
