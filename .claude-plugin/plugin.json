@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "claude-code-auto-compact",
+  "displayName": "Claude Code Auto-Compact",
+  "version": "1.0.0",
+  "description": "Fire Claude Code's /compact from the background via tmux — no focus stealing. Compaction triggers at a token ceiling or workflow phase shift, with a Claude-written summary.",
+  "author": {
+    "name": "Sure Scale Private Limited",
+    "url": "https://github.com/sure-scale"
+  },
+  "homepage": "https://github.com/sure-scale/claude-code-auto-compact",
+  "repository": "https://github.com/sure-scale/claude-code-auto-compact",
+  "license": "MIT",
+  "keywords": ["compact", "context", "tmux", "hooks", "auto-compact", "cache"],
+  "hooks": "./hooks/hooks.json"
+}

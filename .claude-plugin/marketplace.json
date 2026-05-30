@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "sure-scale",
+  "owner": {
+    "name": "Sure Scale Private Limited",
+    "url": "https://github.com/sure-scale"
+  },
+  "description": "Sure Scale's Claude Code plugins.",
+  "plugins": [
+    {
+      "name": "claude-code-auto-compact",
+      "source": "./",
+      "description": "Fire Claude Code's /compact from the background via tmux — no focus stealing. Compaction triggers at a token ceiling or workflow phase shift, with a Claude-written summary.",
+      "license": "MIT",
+      "keywords": ["compact", "context", "tmux", "hooks"]
+    }
+  ]
+}
