@@ -11,6 +11,5 @@
   "homepage": "https://github.com/sure-scale/claude-code-auto-compact",
   "repository": "https://github.com/sure-scale/claude-code-auto-compact",
   "license": "MIT",
-  "keywords": ["compact", "context", "tmux", "hooks", "auto-compact", "cache"],
-  "hooks": "./hooks/hooks.json"
+  "keywords": ["compact", "context", "tmux", "hooks", "auto-compact", "cache"]
 }
